@@ -184,6 +184,7 @@ func getWsdlDefinitions(u string) (wsdl *wsdlDefinitions, err error) {
 
 	decoder := xml.NewDecoder(reader)
 	decoder.CharsetReader = charset.NewReaderLabel
+	decoder.Strict = false
 	err = decoder.Decode(&wsdl)
 
 	return wsdl, err
